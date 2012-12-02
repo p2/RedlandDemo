@@ -54,7 +54,7 @@
 		
 		// for testing purposes, let's use the bundled file
 		NSString *path = [[NSBundle mainBundle] pathForResource:@"vcard" ofType:@"xml"];
-		self.currentURL = [NSURL fileURLWithPath:path];
+		self.currentURL = [NSURL URLWithString:@"https://raw.github.com/p2/RedlandDemo/master/RedlandDemo/vcard.xml"];
 		NSString *rdf = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 		[self parseRDFXML:rdf];
 	}
@@ -83,9 +83,12 @@
 			return;
 		}
 		
+		// The card is the main node we got from the URL
+		RedlandNode *card = [RedlandNode nodeWithURIString:[_currentURL absoluteString]];
+		
 		// extract nickname
 		RedlandNode *predicate = [RedlandNode nodeWithURIString:@"http://www.w3.org/2006/vcard/ns#nickname"];
-		RedlandStatement *statement = [RedlandStatement statementWithSubject:nil predicate:predicate object:nil];
+		RedlandStatement *statement = [RedlandStatement statementWithSubject:card predicate:predicate object:nil];
 		RedlandStreamEnumerator *query = [model enumeratorOfStatementsLike:statement];
 		
 		RedlandStatement *rslt = [query nextObject];
@@ -99,7 +102,7 @@
 		
 		// extract the email address
 		predicate = [RedlandNode nodeWithURIString:@"http://www.w3.org/2006/vcard/ns#email"];
-		statement = [RedlandStatement statementWithSubject:nil predicate:predicate object:nil];
+		statement = [RedlandStatement statementWithSubject:card predicate:predicate object:nil];
 		query = [model enumeratorOfStatementsLike:statement];
 		
 		rslt = [query nextObject];

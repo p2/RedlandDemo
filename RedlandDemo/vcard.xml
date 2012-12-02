@@ -2,7 +2,7 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:v="http://www.w3.org/2006/vcard/ns#">
 	
-	<v:VCard rdf:about="http://example.com/me/corky" >
+	<v:VCard rdf:about="https://raw.github.com/p2/RedlandDemo/master/RedlandDemo/vcard.xml" >
 		<v:fn>Corky Crystal</v:fn>
 		<v:nickname>Corks</v:nickname>
 		<v:tel>
