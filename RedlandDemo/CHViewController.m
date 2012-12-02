@@ -19,8 +19,18 @@
 @implementation CHViewController
 
 
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+	_urlField.text = @"https://raw.github.com/p2/RedlandDemo/master/RedlandDemo/vcard.xml";
+}
+
+
 - (IBAction)download:(id)sender
 {
+	[_urlField resignFirstResponder];
+	
+	// get the URL
 	NSString *urlString = _urlField.text;
 	if ([urlString length] > 0) {
 		_output.text = @"Loading...";
@@ -37,6 +47,8 @@
 			});
 		});
 	}
+	
+	// No URL
 	else {
 		_output.text = @"No URL given";
 		
