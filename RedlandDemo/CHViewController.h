@@ -10,4 +10,10 @@
 
 @interface CHViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UITextField *urlField;
+@property (nonatomic, weak) IBOutlet UITextView *output;
+
+- (IBAction)download:(id)sender;
+
+
 @end

@@ -18,7 +18,42 @@
 		EE7B18F5166BBE7D00AAA8A7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE7B18F4166BBE7D00AAA8A7 /* Default-568h@2x.png */; };
 		EE7B18F8166BBE7D00AAA8A7 /* CHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B18F7166BBE7D00AAA8A7 /* CHViewController.m */; };
 		EE7B18FB166BBE7D00AAA8A7 /* CHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE7B18F9166BBE7D00AAA8A7 /* CHViewController.xib */; };
+		EE7B1917166BC1FD00AAA8A7 /* vcard.xml in Resources */ = {isa = PBXBuildFile; fileRef = EE7B1916166BC1FD00AAA8A7 /* vcard.xml */; };
+		EE7B1922166BC6AC00AAA8A7 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B1921166BC6AC00AAA8A7 /* libxml2.dylib */; };
+		EE7B1924166BC6B400AAA8A7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B1923166BC6B400AAA8A7 /* libsqlite3.dylib */; };
+		EE925048166BCF2A006E30E8 /* libredland-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE925044166BCF1B006E30E8 /* libredland-ios.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE92503F166BCF1B006E30E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE925032166BCF1B006E30E8 /* Redland.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = Redland;
+		};
+		EE925041166BCF1B006E30E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE925032166BCF1B006E30E8 /* Redland.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ED48EB5008BB557A00ACF14F;
+			remoteInfo = Tests;
+		};
+		EE925043166BCF1B006E30E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE925032166BCF1B006E30E8 /* Redland.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEE7B44E15C84978004D5A68;
+			remoteInfo = "redland-ios";
+		};
+		EE925045166BCF1B006E30E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE925032166BCF1B006E30E8 /* Redland.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEE7B45E15C84978004D5A68;
+			remoteInfo = "Tests-iOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		EE7B18DA166BBE7D00AAA8A7 /* RedlandDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedlandDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +72,10 @@
 		EE7B18F6166BBE7D00AAA8A7 /* CHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHViewController.h; sourceTree = "<group>"; };
 		EE7B18F7166BBE7D00AAA8A7 /* CHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHViewController.m; sourceTree = "<group>"; };
 		EE7B18FA166BBE7D00AAA8A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CHViewController.xib; sourceTree = "<group>"; };
+		EE7B1916166BC1FD00AAA8A7 /* vcard.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = vcard.xml; sourceTree = "<group>"; };
+		EE7B1921166BC6AC00AAA8A7 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		EE7B1923166BC6B400AAA8A7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		EE925032166BCF1B006E30E8 /* Redland.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Redland.xcodeproj; path = "Redland-ObjC/Redland.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE925048166BCF2A006E30E8 /* libredland-ios.a in Frameworks */,
+				EE7B1924166BC6B400AAA8A7 /* libsqlite3.dylib in Frameworks */,
+				EE7B1922166BC6AC00AAA8A7 /* libxml2.dylib in Frameworks */,
 				EE7B18DF166BBE7D00AAA8A7 /* UIKit.framework in Frameworks */,
 				EE7B18E1166BBE7D00AAA8A7 /* Foundation.framework in Frameworks */,
 				EE7B18E3166BBE7D00AAA8A7 /* CoreGraphics.framework in Frameworks */,
@@ -56,9 +98,12 @@
 		EE7B18CF166BBE7D00AAA8A7 = {
 			isa = PBXGroup;
 			children = (
+				EE7B1923166BC6B400AAA8A7 /* libsqlite3.dylib */,
+				EE7B1921166BC6AC00AAA8A7 /* libxml2.dylib */,
 				EE7B18E4166BBE7D00AAA8A7 /* RedlandDemo */,
 				EE7B18DD166BBE7D00AAA8A7 /* Frameworks */,
 				EE7B18DB166BBE7D00AAA8A7 /* Products */,
+				EE925032166BCF1B006E30E8 /* Redland.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				EE7B18E6166BBE7D00AAA8A7 /* RedlandDemo-Info.plist */,
+				EE7B1916166BC1FD00AAA8A7 /* vcard.xml */,
 				EE7B18E7166BBE7D00AAA8A7 /* InfoPlist.strings */,
 				EE7B18EA166BBE7D00AAA8A7 /* main.m */,
 				EE7B18EC166BBE7D00AAA8A7 /* RedlandDemo-Prefix.pch */,
@@ -105,6 +151,17 @@
 				EE7B18F4166BBE7D00AAA8A7 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EE925033166BCF1B006E30E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE925040166BCF1B006E30E8 /* Redland.framework */,
+				EE925042166BCF1B006E30E8 /* Tests.octest */,
+				EE925044166BCF1B006E30E8 /* libredland-ios.a */,
+				EE925046166BCF1B006E30E8 /* Tests-iOS.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,12 +204,49 @@
 			mainGroup = EE7B18CF166BBE7D00AAA8A7;
 			productRefGroup = EE7B18DB166BBE7D00AAA8A7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EE925033166BCF1B006E30E8 /* Products */;
+					ProjectRef = EE925032166BCF1B006E30E8 /* Redland.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				EE7B18D9166BBE7D00AAA8A7 /* RedlandDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EE925040166BCF1B006E30E8 /* Redland.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Redland.framework;
+			remoteRef = EE92503F166BCF1B006E30E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE925042166BCF1B006E30E8 /* Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.octest;
+			remoteRef = EE925041166BCF1B006E30E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE925044166BCF1B006E30E8 /* libredland-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libredland-ios.a";
+			remoteRef = EE925043166BCF1B006E30E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE925046166BCF1B006E30E8 /* Tests-iOS.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Tests-iOS.octest";
+			remoteRef = EE925045166BCF1B006E30E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EE7B18D8166BBE7D00AAA8A7 /* Resources */ = {
@@ -164,6 +258,7 @@
 				EE7B18F3166BBE7D00AAA8A7 /* Default@2x.png in Resources */,
 				EE7B18F5166BBE7D00AAA8A7 /* Default-568h@2x.png in Resources */,
 				EE7B18FB166BBE7D00AAA8A7 /* CHViewController.xib in Resources */,
+				EE7B1917166BC1FD00AAA8A7 /* vcard.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +351,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RedlandDemo/RedlandDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"/**";
 				INFOPLIST_FILE = "RedlandDemo/RedlandDemo-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -267,7 +364,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RedlandDemo/RedlandDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"/**";
 				INFOPLIST_FILE = "RedlandDemo/RedlandDemo-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -292,6 +391,7 @@
 				EE7B1900166BBE7D00AAA8A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
