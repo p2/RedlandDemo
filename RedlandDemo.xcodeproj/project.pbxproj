@@ -351,10 +351,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RedlandDemo/RedlandDemo-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"/**";
+				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)\"/**";
 				INFOPLIST_FILE = "RedlandDemo/RedlandDemo-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -364,10 +365,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RedlandDemo/RedlandDemo-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"/**";
+				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)\"/**";
 				INFOPLIST_FILE = "RedlandDemo/RedlandDemo-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
