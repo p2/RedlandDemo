@@ -98,8 +98,6 @@
 		EE7B18CF166BBE7D00AAA8A7 = {
 			isa = PBXGroup;
 			children = (
-				EE7B1923166BC6B400AAA8A7 /* libsqlite3.dylib */,
-				EE7B1921166BC6AC00AAA8A7 /* libxml2.dylib */,
 				EE7B18E4166BBE7D00AAA8A7 /* RedlandDemo */,
 				EE7B18DD166BBE7D00AAA8A7 /* Frameworks */,
 				EE7B18DB166BBE7D00AAA8A7 /* Products */,
@@ -118,6 +116,8 @@
 		EE7B18DD166BBE7D00AAA8A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EE7B1923166BC6B400AAA8A7 /* libsqlite3.dylib */,
+				EE7B1921166BC6AC00AAA8A7 /* libxml2.dylib */,
 				EE7B18DE166BBE7D00AAA8A7 /* UIKit.framework */,
 				EE7B18E0166BBE7D00AAA8A7 /* Foundation.framework */,
 				EE7B18E2166BBE7D00AAA8A7 /* CoreGraphics.framework */,
