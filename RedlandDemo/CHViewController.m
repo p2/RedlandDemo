@@ -22,6 +22,13 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+	
+	// iOS 7 layout
+	if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+		self.edgesForExtendedLayout = UIRectEdgeAll;
+	}
+	
+	// our RDF+XML file
 	_urlField.text = @"https://raw.github.com/p2/RedlandDemo/master/RedlandDemo/vcard.xml";
 }
 
@@ -109,7 +116,7 @@
 		NSString *email = [rslt.object URIValue] ? [[rslt.object URIValue] stringValue] : @"unknown email";
 		
 		// show in output
-		_output.text = [NSString stringWithFormat:@"%@: %@", nickname, email];
+		_output.text = [NSString stringWithFormat:@"Nickname: %@\nEmail: %@", nickname, email];
 	}
 	else {
 		_output.text = @"No RDF+XML received";
