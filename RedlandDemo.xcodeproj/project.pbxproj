@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EE040AEA17FDEA27009274FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE040AE917FDEA27009274FE /* Images.xcassets */; };
+		EE73B7E7190EEA2E00EBC1ED /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B1921166BC6AC00AAA8A7 /* libxml2.dylib */; };
+		EE73B7E8190EEA3300EBC1ED /* libxslt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE73B7E2190EE9CC00EBC1ED /* libxslt.dylib */; };
 		EE7B18DF166BBE7D00AAA8A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B18DE166BBE7D00AAA8A7 /* UIKit.framework */; };
 		EE7B18E1166BBE7D00AAA8A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B18E0166BBE7D00AAA8A7 /* Foundation.framework */; };
 		EE7B18E3166BBE7D00AAA8A7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B18E2166BBE7D00AAA8A7 /* CoreGraphics.framework */; };
@@ -16,7 +18,6 @@
 		EE7B18EF166BBE7D00AAA8A7 /* CHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B18EE166BBE7D00AAA8A7 /* CHAppDelegate.m */; };
 		EE7B18F8166BBE7D00AAA8A7 /* CHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7B18F7166BBE7D00AAA8A7 /* CHViewController.m */; };
 		EE7B18FB166BBE7D00AAA8A7 /* CHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE7B18F9166BBE7D00AAA8A7 /* CHViewController.xib */; };
-		EE7B1922166BC6AC00AAA8A7 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B1921166BC6AC00AAA8A7 /* libxml2.dylib */; };
 		EE7B1924166BC6B400AAA8A7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B1923166BC6B400AAA8A7 /* libsqlite3.dylib */; };
 		EE925048166BCF2A006E30E8 /* libredland-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE925044166BCF1B006E30E8 /* libredland-ios.a */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		EE040AE917FDEA27009274FE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EE73B7E2190EE9CC00EBC1ED /* libxslt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxslt.dylib; path = usr/lib/libxslt.dylib; sourceTree = SDKROOT; };
 		EE7B18DA166BBE7D00AAA8A7 /* RedlandDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedlandDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7B18DE166BBE7D00AAA8A7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EE7B18E0166BBE7D00AAA8A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,9 +80,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE73B7E8190EEA3300EBC1ED /* libxslt.dylib in Frameworks */,
+				EE73B7E7190EEA2E00EBC1ED /* libxml2.dylib in Frameworks */,
 				EE925048166BCF2A006E30E8 /* libredland-ios.a in Frameworks */,
 				EE7B1924166BC6B400AAA8A7 /* libsqlite3.dylib in Frameworks */,
-				EE7B1922166BC6AC00AAA8A7 /* libxml2.dylib in Frameworks */,
 				EE7B18DF166BBE7D00AAA8A7 /* UIKit.framework in Frameworks */,
 				EE7B18E1166BBE7D00AAA8A7 /* Foundation.framework in Frameworks */,
 				EE7B18E3166BBE7D00AAA8A7 /* CoreGraphics.framework in Frameworks */,
@@ -111,6 +114,7 @@
 		EE7B18DD166BBE7D00AAA8A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EE73B7E2190EE9CC00EBC1ED /* libxslt.dylib */,
 				EE7B1923166BC6B400AAA8A7 /* libsqlite3.dylib */,
 				EE7B1921166BC6AC00AAA8A7 /* libxml2.dylib */,
 				EE7B18DE166BBE7D00AAA8A7 /* UIKit.framework */,
