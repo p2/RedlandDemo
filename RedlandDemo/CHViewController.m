@@ -9,6 +9,7 @@
 #import "CHViewController.h"
 #import <Redland-ObjC.h>
 
+static NSURL* defaultUrl;
 
 @interface CHViewController ()
 
@@ -17,6 +18,12 @@
 @end
 
 @implementation CHViewController
+
+
++(void)load
+{
+    defaultUrl = [NSURL URLWithString:@"https://raw.github.com/p2/RedlandDemo/master/RedlandDemo/vcard.xml"];
+}
 
 
 - (void)viewDidLoad
@@ -29,7 +36,7 @@
 	}
 	
 	// our RDF+XML file
-	_urlField.text = @"https://raw.github.com/p2/RedlandDemo/master/RedlandDemo/vcard.xml";
+	_urlField.text = [defaultUrl absoluteString];
 }
 
 
@@ -61,7 +68,7 @@
 		
 		// for testing purposes, let's use the bundled file
 		NSString *path = [[NSBundle mainBundle] pathForResource:@"vcard" ofType:@"xml"];
-		self.currentURL = [NSURL URLWithString:@"https://raw.github.com/p2/RedlandDemo/master/RedlandDemo/vcard.xml"];
+		self.currentURL = defaultUrl;
 		NSString *rdf = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 		[self parseRDFXML:rdf];
 	}
