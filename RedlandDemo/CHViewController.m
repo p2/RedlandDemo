@@ -7,23 +7,19 @@
 //
 
 #import "CHViewController.h"
+#import "CHAppDelegate.h"
 #import <Redland-ObjC.h>
 
-static NSURL* defaultUrl;
 
 @interface CHViewController ()
 
 @property (nonatomic, strong) NSURL *currentURL;
+@property (strong, nonatomic) RedlandStorage *storage;
 
 @end
 
+
 @implementation CHViewController
-
-
-+(void)load
-{
-    defaultUrl = [NSURL URLWithString:@"https://raw.github.com/p2/RedlandDemo/master/RedlandDemo/vcard.xml"];
-}
 
 
 - (void)viewDidLoad
@@ -36,7 +32,7 @@ static NSURL* defaultUrl;
 	}
 	
 	// our RDF+XML file
-	_urlField.text = [defaultUrl absoluteString];
+	_urlField.text = [APP_DELEGATE.defaultURL absoluteString];
 }
 
 
@@ -68,7 +64,7 @@ static NSURL* defaultUrl;
 		
 		// for testing purposes, let's use the bundled file
 		NSString *path = [[NSBundle mainBundle] pathForResource:@"vcard" ofType:@"xml"];
-		self.currentURL = defaultUrl;
+		self.currentURL = APP_DELEGATE.defaultURL;
 		NSString *rdf = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 		[self parseRDFXML:rdf];
 	}
@@ -79,31 +75,25 @@ static NSURL* defaultUrl;
 {
 	if ([rdfXML length] > 0) {
 		
-		// if we want to store stuff locally we use storage
-#if 0
-		RedlandStorage *storage;
-		
-		NSString *dbFileDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-		NSString  *databasePath = [dbFileDir stringByAppendingPathComponent:@"database.sqlite"];
-		if (![[NSFileManager defaultManager] fileExistsAtPath: databasePath]) {
-			storage = [[RedlandStorage alloc] initWithFactoryName:@"sqlite" identifier:databasePath options:@"new='yes'"];
+		// if we want to store stuff locally, we use a SQLite storage object
+		if (!_storage) {
+			NSString *localStore = APP_DELEGATE.localSQLiteStoragePath;
+			if (localStore) {
+				NSString *options = [[NSFileManager defaultManager] fileExistsAtPath:localStore] ? @"new='no'" : @"new='yes'";
+				self.storage = [[RedlandStorage alloc] initWithFactoryName:@"sqlite" identifier:localStore options:options];
+			}
+			
+			// no local storage, but we still need to provide a storage object
+			else {
+				self.storage = [RedlandStorage new];
+			}
 		}
-		else { // Redland normal initialization
-			storage = [[RedlandStorage alloc] initWithFactoryName:@"sqlite" identifier:databasePath options:@"new='no'"];
-		}
+		NSAssert(_storage, @"Must have a `storage` object");
 		
-		// despite the hint https://github.com/p2/Redland-ObjC/issues/11#issuecomment-42673726
-		// the following assert fires:
-		// (see also http://stackoverflow.com/a/23063538)
-		//NSParameterAssert(storage);
-#else
-		RedlandStorage *storage = [RedlandStorage new];
-#endif
-		
-		// instantiate and parse the model
+		// instantiate a parser
 		RedlandParser *parser = [RedlandParser parserWithName:RedlandRDFXMLParserName];
 		RedlandURI *uri = [RedlandURI URIWithURL:_currentURL];
-		RedlandModel *model = [RedlandModel modelWithStorage:storage];
+		RedlandModel *model = [RedlandModel modelWithStorage:_storage];
 		
 		// parse
 		@try {
@@ -115,7 +105,7 @@ static NSURL* defaultUrl;
 			return;
 		}
 		
-		// The card is the main node we got from the URL
+		// the card is the main node we got from the URL
 		RedlandNode *card = [RedlandNode nodeWithURIString:[_currentURL absoluteString]];
 		
 		// extract nickname
@@ -124,13 +114,7 @@ static NSURL* defaultUrl;
 		RedlandStreamEnumerator *query = [model enumeratorOfStatementsLike:statement];
 		
 		RedlandStatement *rslt = [query nextObject];
-		NSString *nickname = nil;
-		if ([rslt.object isLiteral]) {
-			nickname = [rslt.object literalValue];
-		}
-		else {
-			nickname = @"Unknown";
-		}
+		NSString *nickname = [rslt.object isLiteral] ? [rslt.object literalValue] : @"Unknown";
 		
 		// extract the email address
 		predicate = [RedlandNode nodeWithURIString:@"http://www.w3.org/2006/vcard/ns#email"];

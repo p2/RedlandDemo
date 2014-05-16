@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE040AEA17FDEA27009274FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE040AE917FDEA27009274FE /* Images.xcassets */; };
+		EE594B3F1926C7AB0071F0C1 /* vcard.xml in Resources */ = {isa = PBXBuildFile; fileRef = EE7B1916166BC1FD00AAA8A7 /* vcard.xml */; };
 		EE73B7E7190EEA2E00EBC1ED /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B1921166BC6AC00AAA8A7 /* libxml2.dylib */; };
 		EE73B7E8190EEA3300EBC1ED /* libxslt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE73B7E2190EE9CC00EBC1ED /* libxslt.dylib */; };
 		EE7B18DF166BBE7D00AAA8A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7B18DE166BBE7D00AAA8A7 /* UIKit.framework */; };
@@ -250,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE594B3F1926C7AB0071F0C1 /* vcard.xml in Resources */,
 				EE7B18E9166BBE7D00AAA8A7 /* InfoPlist.strings in Resources */,
 				EE040AEA17FDEA27009274FE /* Images.xcassets in Resources */,
 				EE7B18FB166BBE7D00AAA8A7 /* CHViewController.xib in Resources */,
