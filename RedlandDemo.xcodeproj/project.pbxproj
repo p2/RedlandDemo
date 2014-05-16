@@ -80,10 +80,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE7B1924166BC6B400AAA8A7 /* libsqlite3.dylib in Frameworks */,
 				EE73B7E8190EEA3300EBC1ED /* libxslt.dylib in Frameworks */,
 				EE73B7E7190EEA2E00EBC1ED /* libxml2.dylib in Frameworks */,
 				EE925048166BCF2A006E30E8 /* libredland-ios.a in Frameworks */,
-				EE7B1924166BC6B400AAA8A7 /* libsqlite3.dylib in Frameworks */,
 				EE7B18DF166BBE7D00AAA8A7 /* UIKit.framework in Frameworks */,
 				EE7B18E1166BBE7D00AAA8A7 /* Foundation.framework in Frameworks */,
 				EE7B18E3166BBE7D00AAA8A7 /* CoreGraphics.framework in Frameworks */,

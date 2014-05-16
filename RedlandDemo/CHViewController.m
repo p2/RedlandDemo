@@ -80,7 +80,25 @@ static NSURL* defaultUrl;
 	if ([rdfXML length] > 0) {
 		
 		// if we want to store stuff locally we use storage
+#if 0
+		RedlandStorage *storage;
+		
+		NSString *dbFileDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+		NSString  *databasePath = [dbFileDir stringByAppendingPathComponent:@"database.sqlite"];
+		if (![[NSFileManager defaultManager] fileExistsAtPath: databasePath]) {
+			storage = [[RedlandStorage alloc] initWithFactoryName:@"sqlite" identifier:databasePath options:@"new='yes'"];
+		}
+		else { // Redland normal initialization
+			storage = [[RedlandStorage alloc] initWithFactoryName:@"sqlite" identifier:databasePath options:@"new='no'"];
+		}
+		
+		// despite the hint https://github.com/p2/Redland-ObjC/issues/11#issuecomment-42673726
+		// the following assert fires:
+		// (see also http://stackoverflow.com/a/23063538)
+		//NSParameterAssert(storage);
+#else
 		RedlandStorage *storage = [RedlandStorage new];
+#endif
 		
 		// instantiate and parse the model
 		RedlandParser *parser = [RedlandParser parserWithName:RedlandRDFXMLParserName];
